@@ -6,33 +6,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Kátia Tamaishi Mezete | Portfólio</title>
+    <title>Portfólio - Kátia Tamaishi Mezete</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- MENU -->
+    <!-- CABEÇALHO -->
+    <header id="inicio">
 
-    <header class="header">
+        <nav class="cabecalho">
 
-        <div class="container menu">
+          <a href="#inicio" class="logo">
+    Kátia🐾
+</a>
 
-            <a href="#inicio" class="logo">
-                <span>&lt;</span>Kátia<span>/&gt;</span>
-            </a>
+            <nav class="menu">
 
-            <nav>
                 <a href="#inicio">Início</a>
+
                 <a href="#sobre">Sobre</a>
+
                 <a href="#habilidades">Habilidades</a>
+
                 <a href="#projetos">Projetos</a>
+
                 <a href="#formacao">Formação</a>
-                <a href="#contato">Contato</a>
+
+                <!-- CONTATO COM SETA -->
+                <a href="#contato" class="link-contato">
+                    <span>↓</span>
+                    Contato
+                </a>
+
             </nav>
 
-        </div>
+        </nav>
 
     </header>
 
@@ -40,497 +50,498 @@
     <main>
 
         <!-- INÍCIO -->
+        <section class="hero">
 
-        <section id="inicio" class="inicio">
+            <article class="hero-text">
 
-            <div class="container inicio-conteudo">
+                <p class="saudacao">Olá, eu sou</p>
 
-                <div class="inicio-texto">
+                <h1>
+                   
+                    <span>Kátia Tamaishi Mezete</span>
+                </h1>
 
-                    <p class="pequeno-texto">Olá, eu sou</p>
+                <h2>Estudante de Sistemas de Informação</h2>
 
-                    <h1>
-                        Kátia Tamaishi
-                        <span>Mezete</span>
-                    </h1>
+                <p>
+                    Tenho 19 anos, moro em Alfenas - MG e estou em busca
+                    de oportunidades para desenvolver meus conhecimentos.
+                </p>
 
-                    <h2>
-                        Estudante de Sistemas de Informação
-                    </h2>
+                <nav class="botoes">
 
-                    <p class="descricao">
-                        Tenho 19 anos, moro em Alfenas - MG e estou
-                        em busca de oportunidades para desenvolver
-                        meus conhecimentos na área de tecnologia.
-                    </p>
+                    <a href="#contato" class="botao">
+                        Entre em contato
+                    </a>
 
-                    <div class="botoes">
+                    <a href="#projetos" class="botao-outline">
+                        Ver projetos
+                    </a>
 
-                        <a href="#projetos" class="botao principal">
-                            Ver projetos
-                        </a>
+                </nav>
 
-                        <a href="#contato" class="botao">
-                            Entre em contato
-                        </a>
-
-                    </div>
-
-                </div>
+            </article>
 
 
-                <div class="inicio-foto">
+            <figure class="foto">
 
-                    <div class="foto-borda">
+                <img
+                    src="imagem/IMG_7324.jpeg"
+                    alt="Foto de Kátia Tamaishi Mezete"
+                >
 
-                        <img src="imagem/IMG_7324.jpeg"
-                            alt="Foto de Kátia Tamaishi Mezete">
-
-                    </div>
-
-                    <div class="bolinha bolinha-1"></div>
-                    <div class="bolinha bolinha-2"></div>
-
-                </div>
-
-            </div>
+            </figure>
 
         </section>
 
 
         <!-- SOBRE -->
-
         <section id="sobre" class="secao">
 
-            <div class="container">
+            <header class="titulo-secao">
 
-                <div class="titulo">
+                <p>CONHEÇA UM POUCO</p>
 
-                    <p>01 — SOBRE</p>
+                <h2>Sobre mim</h2>
 
-                    <h2>Sobre mim</h2>
-
-                </div>
+            </header>
 
 
-                <div class="sobre-conteudo">
+            <article class="sobre-conteudo">
 
-                    <div class="sobre-texto">
+                <section class="sobre-texto">
 
-                        <p>
-                            Sou responsável, pontual, comunicativa
-                            e dedicada. Tenho facilidade para aprender
-                            e trabalhar em equipe.
-                        </p>
+                    <p>
+                        Sou responsável, pontual, comunicativa e dedicada.
+                        Tenho facilidade para aprender e trabalhar em equipe.
+                    </p>
 
-                        <p>
-                            Atualmente estou cursando Sistemas de
-                            Informação e busco desenvolver cada vez
-                            mais meus conhecimentos em tecnologia,
-                            programação e desenvolvimento web.
-                        </p>
+                    <p>
+                        Atualmente estou cursando Sistemas de Informação,
+                        buscando desenvolver cada vez mais meus conhecimentos
+                        na área de tecnologia.
+                    </p>
 
-                    </div>
+                </section>
 
 
-                    <div class="sobre-info">
+                <section class="sobre-info">
 
-                        <div>
-                            <span>19</span>
-                            <p>Anos</p>
-                        </div>
+                    <article class="info">
 
-                        <div>
-                            <span>MG</span>
-                            <p>Alfenas</p>
-                        </div>
+                        <strong>19</strong>
 
-                        <div>
-                            <span>SI</span>
-                            <p>Graduação</p>
-                        </div>
+                        <span>Anos</span>
 
-                    </div>
+                    </article>
 
-                </div>
 
-            </div>
+                    <article class="info">
+
+                        <strong>MG</strong>
+
+                        <span>Alfenas</span>
+
+                    </article>
+
+
+                    <article class="info">
+
+                        <strong>SI</strong>
+
+                        <span>Sistemas de Informação</span>
+
+                    </article>
+
+                </section>
+
+            </article>
 
         </section>
 
 
         <!-- HABILIDADES -->
+        <section id="habilidades" class="secao">
 
-        <section id="habilidades" class="secao escura">
+            <header class="titulo-secao">
 
-            <div class="container">
+                <p>O QUE EU SEI FAZER</p>
 
-                <div class="titulo">
+                <h2>Habilidades</h2>
 
-                    <p>02 — HABILIDADES</p>
-
-                    <h2>O que eu sei fazer</h2>
-
-                </div>
+            </header>
 
 
-                <div class="habilidades">
+            <section class="cards">
 
-                    <div class="habilidade">
-                        <span>01</span>
-                        <h3>Comunicação</h3>
-                        <p>Facilidade para comunicação e atendimento.</p>
-                    </div>
+                <article class="card">
 
-                    <div class="habilidade">
-                        <span>02</span>
-                        <h3>Organização</h3>
-                        <p>Responsabilidade e organização nas atividades.</p>
-                    </div>
+                    <h3>Comunicação</h3>
 
-                    <div class="habilidade">
-                        <span>03</span>
-                        <h3>Excel</h3>
-                        <p>Conhecimentos em Excel e Excel Avançado.</p>
-                    </div>
+                    <p>
+                        Facilidade para comunicação e atendimento ao público.
+                    </p>
 
-                    <div class="habilidade">
-                        <span>04</span>
-                        <h3>Desenvolvimento Web</h3>
-                        <p>HTML, CSS e desenvolvimento de páginas web.</p>
-                    </div>
+                </article>
 
-                    <div class="habilidade">
-                        <span>05</span>
-                        <h3>Trabalho em equipe</h3>
-                        <p>Facilidade para trabalhar com outras pessoas.</p>
-                    </div>
 
-                    <div class="habilidade">
-                        <span>06</span>
-                        <h3>Resolução de problemas</h3>
-                        <p>Facilidade para buscar soluções.</p>
-                    </div>
+                <article class="card">
 
-                </div>
+                    <h3>Organização</h3>
 
-            </div>
+                    <p>
+                        Organização de tarefas, atividades e rotina de trabalho.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>Excel</h3>
+
+                    <p>
+                        Conhecimentos em Excel e Excel Avançado.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>Desenvolvimento Web</h3>
+
+                    <p>
+                        Conhecimentos em HTML e CSS.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>Trabalho em equipe</h3>
+
+                    <p>
+                        Facilidade para trabalhar em equipe e colaborar.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>Resolução de problemas</h3>
+
+                    <p>
+                        Capacidade de encontrar soluções para situações
+                        do dia a dia.
+                    </p>
+
+                </article>
+
+            </section>
 
         </section>
 
 
         <!-- PROJETOS -->
-
         <section id="projetos" class="secao">
 
-            <div class="container">
+            <header class="titulo-secao">
 
-                <div class="titulo">
+                <p>MEUS TRABALHOS</p>
 
-                    <p>03 — PROJETOS</p>
+                <h2>Projetos</h2>
 
-                    <h2>Meus projetos</h2>
-
-                </div>
+            </header>
 
 
-                <div class="projetos">
+            <section class="cards">
 
-                    <article class="projeto">
+                <article class="card projeto">
 
-                        <div class="projeto-numero">
-                            01
-                        </div>
+                    
 
-                        <div>
+                    <h3>Portfólio Pessoal</h3>
 
-                            <p class="categoria">
-                                DESENVOLVIMENTO WEB
-                            </p>
+                    <p>
+                        Desenvolvimento de um portfólio pessoal utilizando
+                        HTML e CSS para apresentar minhas informações,
+                        habilidades e projetos.
+                    </p>
 
-                            <h3>Portfólio Pessoal</h3>
-
-                            <p>
-                                Projeto desenvolvido com HTML e CSS,
-                                utilizando estrutura semântica,
-                                Flexbox e design responsivo.
-                            </p>
-
-                            <div class="tecnologias">
-
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>Flexbox</span>
-
-                            </div>
-
-                        </div>
-
-                    </article>
+                </article>
 
 
-                    <article class="projeto">
+                <article class="card projeto">
 
-                        <div class="projeto-numero">
-                            02
-                        </div>
 
-                        <div>
+                    <h3>Sistemas de Informação</h3>
 
-                            <p class="categoria">
-                                PROJETO ACADÊMICO
-                            </p>
+                    <p>
+                        Projetos e atividades acadêmicas desenvolvidos
+                        durante o curso de Sistemas de Informação.
+                    </p>
 
-                            <h3>Sistemas de Informação</h3>
+                </article>
 
-                            <p>
-                                Atividades e projetos desenvolvidos
-                                durante a graduação em Sistemas
-                                de Informação.
-                            </p>
-
-                            <div class="tecnologias">
-
-                                <span>Programação</span>
-                                <span>Banco de Dados</span>
-                                <span>Web</span>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
+            </section>
 
         </section>
 
 
         <!-- FORMAÇÃO -->
+        <section id="formacao" class="secao">
 
-        <section id="formacao" class="secao escura">
+            <header class="titulo-secao">
 
-            <div class="container">
+                <p>MINHA TRAJETÓRIA</p>
 
-                <div class="titulo">
+                <h2>Formação</h2>
 
-                    <p>04 — FORMAÇÃO</p>
-
-                    <h2>Minha formação</h2>
-
-                </div>
+            </header>
 
 
-                <div class="formacoes">
+            <section class="formacao-lista">
 
-                    <div class="formacao">
+                <article class="formacao-item">
 
-                        <span>2026</span>
+                    <span class="ano">2026</span>
 
-                        <div>
+                    <h3>Sistemas de Informação</h3>
 
-                            <h3>Sistemas de Informação</h3>
+                    <p>
+                        Graduação em andamento
+                    </p>
 
-                            <p>
-                                Graduação em andamento.
-                            </p>
-
-                        </div>
-
-                    </div>
+                </article>
 
 
-                    <div class="formacao">
+                <article class="formacao-item">
 
-                        <span>Concluído</span>
+                    <span class="ano">Concluído</span>
 
-                        <div>
+                    <h3>Ensino Médio</h3>
 
-                            <h3>Ensino Médio</h3>
+                    <p>
+                        Ensino Médio Completo
+                    </p>
 
-                            <p>
-                                Ensino Médio Completo.
-                            </p>
+                </article>
 
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
+            </section>
 
         </section>
 
 
         <!-- CURSOS -->
-
         <section class="secao">
 
-            <div class="container">
+            <header class="titulo-secao">
 
-                <div class="titulo">
+                <p>APERFEIÇOAMENTO</p>
 
-                    <p>05 — CURSOS</p>
+                <h2>Cursos</h2>
 
-                    <h2>Cursos realizados</h2>
-
-                </div>
+            </header>
 
 
-                <div class="cursos">
+            <section class="lista-cursos">
 
-                    <span>Assistente Administrativo</span>
+                <article>Assistente Administrativo</article>
 
-                    <span>Técnico em Administração com Logística</span>
+                <article>Técnico em Administração com Logística</article>
 
-                    <span>Gestão de Pessoas</span>
+                <article>Gestão de Pessoas</article>
 
-                    <span>Administração Financeira</span>
+                <article>Administração Financeira</article>
 
-                    <span>Marketing Digital</span>
+                <article>Marketing Digital</article>
 
-                    <span>E-commerce</span>
+                <article>E-commerce</article>
 
-                    <span>Assistente Contábil</span>
+                <article>Assistente Contábil</article>
 
-                    <span>Operador de Caixa</span>
+                <article>Operador de Caixa</article>
 
-                    <span>Secretariado</span>
+                <article>Secretariado</article>
 
-                    <span>Logística</span>
+                <article>Logística</article>
 
-                    <span>Excel</span>
+                <article>Excel</article>
 
-                    <span>Excel Avançado</span>
+                <article>Excel Avançado</article>
 
-                </div>
-
-            </div>
+            </section>
 
         </section>
 
 
         <!-- EXPERIÊNCIA -->
+        <section class="secao">
 
-        <section class="secao escura">
+            <header class="titulo-secao">
 
-            <div class="container">
+                <p>MINHA EXPERIÊNCIA</p>
 
-                <div class="titulo">
+                <h2>Experiência</h2>
 
-                    <p>06 — EXPERIÊNCIA</p>
-
-                    <h2>Experiência profissional</h2>
-
-                </div>
+            </header>
 
 
-                <div class="experiencias">
+            <section class="experiencia-lista">
 
-                    <article>
+                <article class="experiencia-item">
 
-                        <span>01</span>
+                    <span class="numero">01</span>
 
-                        <div>
+                    <section>
 
-                            <h3>Loja de Roupas</h3>
+                        <h3>Loja de Roupas</h3>
 
-                            <p>
-                                Caixa, reposição, vendas,
-                                atendimento e organização da loja.
-                            </p>
+                        <p>
+                            Atendimento, vendas, caixa e organização.
+                        </p>
 
-                        </div>
+                    </section>
 
-                    </article>
-
-
-                    <article>
-
-                        <span>02</span>
-
-                        <div>
-
-                            <h3>Hamburgueria</h3>
-
-                            <p>
-                                Atendimento, caixa, pedidos,
-                                embalagem e organização.
-                            </p>
-
-                        </div>
-
-                    </article>
+                </article>
 
 
-                    <article>
+                <article class="experiencia-item">
 
-                        <span>03</span>
+                    <span class="numero">02</span>
 
-                        <div>
+                    <section>
 
-                            <h3>Negócio Próprio</h3>
+                        <h3>Hamburgueria</h3>
 
-                            <p>
-                                Venda de buquês e presentes,
-                                atendimento ao cliente e organização.
-                            </p>
+                        <p>
+                            Atendimento, caixa, pedidos e organização.
+                        </p>
 
-                        </div>
+                    </section>
 
-                    </article>
+                </article>
 
-                </div>
 
-            </div>
+                <article class="experiencia-item">
+
+                    <span class="numero">03</span>
+
+                    <section>
+
+                        <h3>Negócio Próprio</h3>
+
+                        <p>
+                            Venda de buquês e presentes.
+                        </p>
+
+                    </section>
+
+                </article>
+
+            </section>
 
         </section>
 
 
         <!-- CONTATO -->
+        <section id="contato" class="secao">
 
-        <section id="contato" class="contato">
+            <header class="titulo-secao">
 
-            <div class="container contato-conteudo">
+                <p>VAMOS CONVERSAR</p>
 
-                <div>
+                <h2>Entre em contato</h2>
 
-                    <p class="pequeno-texto">
-                        VAMOS CONVERSAR?
-                    </p>
-
-                    <h2>
-                        Entre em contato
-                    </h2>
-
-                    <p>
-                        Estou aberta a novas oportunidades,
-                        projetos e experiências profissionais.
-                    </p>
-
-                </div>
+            </header>
 
 
-                <div class="dados">
+            <section class="contato-conteudo">
 
-                    <a href="mailto:katiamezete43@gmail.com">
-                        📧 katiamezete43@gmail.com
-                    </a>
-
-                    <a href="tel:+5535997527398">
-                        📱 (35) 99752-7398
-                    </a>
+                <address class="contato-info">
 
                     <p>
-                        📍 Alfenas - MG
+
+                        <strong>Localização</strong>
+
+                        Alfenas - MG
+
                     </p>
 
-                </div>
 
-            </div>
+                    <p>
+
+                        <strong>E-mail</strong>
+
+                        <a href="mailto:katiamezete43@gmail.com">
+                            katiamezete43@gmail.com
+                        </a>
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>Telefone</strong>
+
+                        <a href="tel:+5535997527398">
+                            (35) 99752-7398
+                        </a>
+
+                    </p>
+
+                </address>
+
+
+                <form
+                    action="mailto:katiamezete43@gmail.com"
+                    method="post"
+                    enctype="text/plain"
+                >
+
+                    <label for="nome">Nome</label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        name="Nome"
+                        placeholder="Seu nome"
+                        required
+                    >
+
+
+                    <label for="email">E-mail</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="Email"
+                        placeholder="Seu e-mail"
+                        required
+                    >
+
+
+                    <label for="mensagem">Mensagem</label>
+
+                    <textarea
+                        id="mensagem"
+                        name="Mensagem"
+                        rows="6"
+                        placeholder="Digite sua mensagem"
+                        required
+                    ></textarea>
+
+
+                    <button type="submit">
+                        Enviar mensagem
+                    </button>
+
+                </form>
+
+            </section>
 
         </section>
 
@@ -538,24 +549,26 @@
 
 
     <!-- RODAPÉ -->
-
     <footer>
 
-        <div class="container">
-
-            <p>
-                © 2026 Kátia Tamaishi Mezete
-            </p>
-
-            <p>
-                Portfólio pessoal
-            </p>
-
-        </div>
+        <p>
+            © 2026 Kátia Tamaishi Mezete - Portfólio
+        </p>
 
     </footer>
+
+
+    <!-- VOLTAR AO TOPO -->
+    <a
+        href="#inicio"
+        class="voltar-topo"
+        aria-label="Voltar ao topo"
+        title="Voltar ao topo"
+    >
+        ↑
+    </a>
+
 
 </body>
 
 </html>
-
