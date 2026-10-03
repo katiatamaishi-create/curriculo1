@@ -1,11 +1,12 @@
-
 :root {
+
     --rosa: #D66CA0;
     --rosa-escuro: #C85C91;
     --rosa-claro: #FBE8F0;
     --rosa-suave: #FFF7FA;
 
     --branco: #FFFFFF;
+
     --cinza-claro: #F5F5F5;
     --cinza-borda: #E8E8E8;
 
@@ -21,40 +22,57 @@
 ========================= */
 
 * {
+
     margin: 0;
     padding: 0;
+
     box-sizing: border-box;
 }
 
 
 html {
+
     scroll-behavior: smooth;
 }
 
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
     background: var(--branco);
+
     color: var(--texto);
+
     line-height: 1.6;
+
     overflow-x: hidden;
 }
 
 
 img {
+
     max-width: 100%;
+
     display: block;
 }
 
 
 a {
+
     color: inherit;
+
     text-decoration: none;
 }
 
 
 p {
+
     font-size: 1rem;
+
     line-height: 1.7;
 }
 
@@ -62,11 +80,13 @@ p {
 h1,
 h2,
 h3 {
+
     font-weight: 700;
 }
 
 
 section {
+
     scroll-margin-top: 90px;
 }
 
@@ -75,14 +95,17 @@ section {
    CABEÇALHO
 ========================= */
 
-header {
+body > header {
+
     width: 100%;
 
     background: var(--branco);
 
-    border-bottom: 1px solid var(--cinza-borda);
+    border-bottom:
+        1px solid var(--cinza-borda);
 
     position: sticky;
+
     top: 0;
 
     z-index: 100;
@@ -90,6 +113,7 @@ header {
 
 
 .cabecalho {
+
     width: min(90%, var(--largura));
 
     min-height: 80px;
@@ -111,30 +135,32 @@ header {
 ========================= */
 
 .logo {
+
     display: inline-flex;
 
     align-items: center;
 
-    gap: 6px;
+    justify-content: center;
 
-    color: var(--texto);
+    width: 42px;
 
-    font-size: clamp(22px, 2vw, 27px);
+    height: 42px;
 
-    font-weight: 700;
-
-    letter-spacing: -0.5px;
-
-    white-space: nowrap;
+    font-size: 25px;
 
     transition: 0.3s;
 }
 
 
 .logo:hover {
-    color: var(--rosa);
 
     transform: translateY(-2px);
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(214, 108, 160, 0.35)
+        );
 }
 
 
@@ -143,17 +169,24 @@ header {
 ========================= */
 
 .menu {
+
     display: flex;
 
     align-items: center;
 
     justify-content: center;
 
-    gap: clamp(15px, 2.5vw, 28px);
+    gap:
+        clamp(
+            12px,
+            2.2vw,
+            26px
+        );
 }
 
 
 .menu a {
+
     position: relative;
 
     color: var(--texto);
@@ -164,32 +197,114 @@ header {
 
     white-space: nowrap;
 
-    transition: 0.3s;
+    padding: 8px 0;
+
+    transition:
+        color 0.3s ease,
+        text-shadow 0.3s ease;
 }
 
 
+/* RISCO DO MENU */
+
+.menu a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 0;
+
+    width: 0;
+
+    height: 2px;
+
+    transform:
+        translateX(-50%);
+
+    background: var(--rosa);
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 5px
+        rgba(214, 108, 160, 0.60),
+
+        0 0 12px
+        rgba(214, 108, 160, 0.35);
+
+    transition:
+        width 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* MOUSE */
+
 .menu a:hover {
+
     color: var(--rosa);
+
+    text-shadow:
+        0 0 8px
+        rgba(214, 108, 160, 0.25);
+}
+
+
+.menu a:hover::after {
+
+    width: 100%;
+}
+
+
+/* ABA ATIVA */
+
+.menu a.ativo {
+
+    color: var(--rosa);
+
+    text-shadow:
+        0 0 8px
+        rgba(214, 108, 160, 0.35);
+}
+
+
+.menu a.ativo::after {
+
+    width: 100%;
+
+    box-shadow:
+
+        0 0 5px
+        rgba(214, 108, 160, 0.75),
+
+        0 0 12px
+        rgba(214, 108, 160, 0.50),
+
+        0 0 20px
+        rgba(214, 108, 160, 0.25);
 }
 
 
 /* =========================
-   SETA ACIMA DE CONTATO
+   SETA CONTATO
 ========================= */
 
 .link-contato {
-    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
 }
 
 
 .link-contato span {
-    position: absolute;
 
-    top: -25px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
+    position: static;
 
     color: var(--rosa);
 
@@ -199,20 +314,7 @@ header {
 
     line-height: 1;
 
-    animation: setaContato 1.2s infinite;
-}
-
-
-@keyframes setaContato {
-
-    0%,
-    100% {
-        transform: translate(-50%, 0);
-    }
-
-    50% {
-        transform: translate(-50%, 5px);
-    }
+    animation: none;
 }
 
 
@@ -221,13 +323,22 @@ header {
 ========================= */
 
 .hero {
+
     width: min(90%, var(--largura));
 
-    min-height: calc(100vh - 80px);
+    min-height:
+        calc(
+            100vh - 80px
+        );
 
     margin: auto;
 
-    padding: clamp(50px, 8vw, 100px) 0;
+    padding:
+        clamp(
+            50px,
+            8vw,
+            100px
+        ) 0;
 
     display: flex;
 
@@ -235,11 +346,17 @@ header {
 
     justify-content: space-between;
 
-    gap: clamp(40px, 7vw, 80px);
+    gap:
+        clamp(
+            40px,
+            7vw,
+            80px
+        );
 }
 
 
 .hero-text {
+
     flex: 1;
 
     max-width: 650px;
@@ -247,9 +364,15 @@ header {
 
 
 .saudacao {
+
     color: var(--rosa);
 
-    font-size: clamp(15px, 2vw, 17px);
+    font-size:
+        clamp(
+            15px,
+            2vw,
+            17px
+        );
 
     font-weight: 700;
 
@@ -258,7 +381,13 @@ header {
 
 
 .hero h1 {
-    font-size: clamp(38px, 5vw, 55px);
+
+    font-size:
+        clamp(
+            38px,
+            5vw,
+            55px
+        );
 
     line-height: 1.1;
 
@@ -267,20 +396,28 @@ header {
 
 
 .hero h1 span {
+
     color: var(--rosa);
 }
 
 
 .hero h2 {
+
     color: #444444;
 
-    font-size: clamp(19px, 2.5vw, 23px);
+    font-size:
+        clamp(
+            19px,
+            2.5vw,
+            23px
+        );
 
     margin-bottom: 20px;
 }
 
 
 .hero-text > p:last-of-type {
+
     color: var(--cinza);
 
     max-width: 600px;
@@ -288,10 +425,11 @@ header {
 
 
 /* =========================
-   FOTO REDONDA
+   FOTO
 ========================= */
 
 .foto {
+
     flex: 0 1 360px;
 
     display: flex;
@@ -301,7 +439,13 @@ header {
 
 
 .foto img {
-    width: clamp(230px, 30vw, 330px);
+
+    width:
+        clamp(
+            230px,
+            30vw,
+            330px
+        );
 
     aspect-ratio: 1 / 1;
 
@@ -309,20 +453,24 @@ header {
 
     border-radius: 50%;
 
-    border: 4px solid var(--rosa);
+    border:
+        4px solid var(--rosa);
 
     box-shadow:
-        0 10px 30px rgba(214, 108, 160, 0.18);
+        0 10px 30px
+        rgba(214, 108, 160, 0.18);
 
     transition: 0.3s;
 }
 
 
 .foto img:hover {
+
     transform: scale(1.03);
 
     box-shadow:
-        0 15px 35px rgba(214, 108, 160, 0.25);
+        0 15px 35px
+        rgba(214, 108, 160, 0.25);
 }
 
 
@@ -331,6 +479,7 @@ header {
 ========================= */
 
 .botoes {
+
     display: flex;
 
     flex-wrap: wrap;
@@ -343,6 +492,7 @@ header {
 
 .botao,
 .botao-outline {
+
     display: inline-flex;
 
     align-items: center;
@@ -351,7 +501,8 @@ header {
 
     min-height: 46px;
 
-    padding: 12px 22px;
+    padding:
+        12px 22px;
 
     border-radius: 7px;
 
@@ -364,6 +515,7 @@ header {
 
 
 .botao {
+
     background: var(--rosa);
 
     color: var(--branco);
@@ -371,6 +523,7 @@ header {
 
 
 .botao:hover {
+
     background: var(--rosa-escuro);
 
     transform: translateY(-2px);
@@ -378,7 +531,9 @@ header {
 
 
 .botao-outline {
-    border: 1px solid var(--rosa);
+
+    border:
+        1px solid var(--rosa);
 
     color: var(--rosa);
 
@@ -387,6 +542,7 @@ header {
 
 
 .botao-outline:hover {
+
     background: var(--rosa);
 
     color: var(--branco);
@@ -398,24 +554,72 @@ header {
 ========================= */
 
 .secao {
+
     width: 100%;
 
-    padding: clamp(65px, 8vw, 90px) 5%;
+    padding:
+        clamp(
+            65px,
+            8vw,
+            90px
+        ) 5%;
 
-    border-top: 1px solid var(--cinza-borda);
+    border-top:
+        1px solid var(--cinza-borda);
 }
 
+
+/* =========================
+   TÍTULOS
+========================= */
 
 .titulo-secao {
+
+    position: relative;
+
     text-align: center;
 
-    margin: 0 auto clamp(35px, 5vw, 55px);
+    margin:
+        0 auto
+        clamp(
+            35px,
+            5vw,
+            55px
+        );
 
-    max-width: 700px;
+    max-width: 1000px;
+
+    padding-bottom: 20px;
 }
 
 
+/* RISCÃO CINZA */
+
+.titulo-secao::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height: 1px;
+
+    transform:
+        translateX(-50%);
+
+    background: var(--cinza-borda);
+}
+
+
+/* TEXTO PEQUENO */
+
 .titulo-secao p {
+
     color: var(--rosa);
 
     font-size: 13px;
@@ -428,12 +632,59 @@ header {
 }
 
 
+/* TÍTULO */
+
 .titulo-secao h2 {
+
+    position: relative;
+
+    display: inline-block;
+
     color: var(--texto);
 
-    font-size: clamp(28px, 4vw, 38px);
+    font-size:
+        clamp(
+            28px,
+            4vw,
+            38px
+        );
 
     line-height: 1.2;
+
+    padding-bottom: 12px;
+}
+
+
+/* RISQUINHO ROSA */
+
+.titulo-secao h2::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 0;
+
+    width: 55px;
+
+    height: 2px;
+
+    transform:
+        translateX(-50%);
+
+    background: var(--rosa);
+
+    border-radius: 10px;
+
+    box-shadow:
+
+        0 0 6px
+        rgba(214, 108, 160, 0.45),
+
+        0 0 12px
+        rgba(214, 108, 160, 0.20);
 }
 
 
@@ -442,26 +693,36 @@ header {
 ========================= */
 
 #sobre {
+
     background: var(--rosa-suave);
 }
 
 
 .sobre-conteudo {
+
     width: min(100%, 1050px);
 
     margin: auto;
 
     display: grid;
 
-    grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr);
+    grid-template-columns:
+        minmax(0, 1.5fr)
+        minmax(280px, 1fr);
 
-    gap: clamp(35px, 6vw, 60px);
+    gap:
+        clamp(
+            35px,
+            6vw,
+            60px
+        );
 
     align-items: center;
 }
 
 
 .sobre-texto p {
+
     color: var(--cinza);
 
     margin-bottom: 18px;
@@ -469,33 +730,40 @@ header {
 
 
 .sobre-info {
+
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(2, 1fr);
 
     gap: 15px;
 }
 
 
 .info {
+
     background: var(--branco);
 
-    border: 1px solid var(--cinza-borda);
+    border:
+        1px solid var(--cinza-borda);
 
     border-radius: 14px;
 
-    padding: 25px 15px;
+    padding:
+        25px 15px;
 
     text-align: center;
 
     transition: 0.3s;
 
     box-shadow:
-        0 5px 20px rgba(0, 0, 0, 0.03);
+        0 5px 20px
+        rgba(0, 0, 0, 0.03);
 }
 
 
 .info:hover {
+
     border-color: var(--rosa);
 
     transform: translateY(-5px);
@@ -503,17 +771,24 @@ header {
 
 
 .info strong {
+
     display: block;
 
     color: var(--rosa);
 
-    font-size: clamp(25px, 3vw, 30px);
+    font-size:
+        clamp(
+            25px,
+            3vw,
+            30px
+        );
 
     margin-bottom: 5px;
 }
 
 
 .info span {
+
     color: var(--cinza);
 
     font-size: 14px;
@@ -525,52 +800,65 @@ header {
 ========================= */
 
 #habilidades {
+
     background: var(--branco);
 }
 
 
 #habilidades .cards {
+
     width: min(100%, 1100px);
 
     margin: auto;
 
     display: grid;
 
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
 
     gap: 20px;
 }
 
 
 #habilidades .card {
+
     position: relative;
 
     background: var(--branco);
 
-    border: 1px solid var(--cinza-borda);
+    border:
+        1px solid var(--cinza-borda);
 
     border-radius: 12px;
 
-    padding: 30px 30px 30px 35px;
+    padding:
+        30px 30px 30px 35px;
 
     transition: 0.3s;
 
     box-shadow:
-        0 5px 20px rgba(0, 0, 0, 0.03);
+        0 5px 20px
+        rgba(0, 0, 0, 0.03);
 
     overflow: hidden;
 }
 
 
 #habilidades .card::before {
+
     content: "";
 
     position: absolute;
 
     left: 0;
+
     top: 0;
 
     width: 4px;
+
     height: 100%;
 
     background: var(--rosa);
@@ -578,16 +866,19 @@ header {
 
 
 #habilidades .card:hover {
+
     border-color: var(--rosa);
 
     transform: translateY(-5px);
 
     box-shadow:
-        0 10px 30px rgba(214, 108, 160, 0.10);
+        0 10px 30px
+        rgba(214, 108, 160, 0.10);
 }
 
 
 #habilidades .card h3 {
+
     color: var(--texto);
 
     font-size: 19px;
@@ -597,6 +888,7 @@ header {
 
 
 #habilidades .card p {
+
     color: var(--cinza);
 }
 
@@ -606,29 +898,37 @@ header {
 ========================= */
 
 #projetos {
+
     background: var(--rosa-claro);
 }
 
 
 #projetos .cards {
+
     width: min(100%, 1000px);
 
     margin: auto;
 
     display: grid;
 
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
 
     gap: 25px;
 }
 
 
 #projetos .projeto {
+
     position: relative;
 
     background: var(--branco);
 
-    border: 1px solid var(--cinza-borda);
+    border:
+        1px solid var(--cinza-borda);
 
     border-radius: 14px;
 
@@ -641,21 +941,25 @@ header {
     transition: 0.3s;
 
     box-shadow:
-        0 5px 20px rgba(0, 0, 0, 0.03);
+        0 5px 20px
+        rgba(0, 0, 0, 0.03);
 }
 
 
 #projetos .projeto:hover {
+
     transform: translateY(-5px);
 
     border-color: var(--rosa);
 
     box-shadow:
-        0 10px 30px rgba(214, 108, 160, 0.12);
+        0 10px 30px
+        rgba(214, 108, 160, 0.12);
 }
 
 
 #projetos .projeto h3 {
+
     color: var(--rosa);
 
     font-size: 21px;
@@ -665,6 +969,7 @@ header {
 
 
 #projetos .projeto p {
+
     color: var(--cinza);
 
     font-size: 15px;
@@ -674,14 +979,17 @@ header {
 
 
 #projetos .projeto::before {
+
     content: "";
 
     position: absolute;
 
     top: 0;
+
     left: 0;
 
     width: 100%;
+
     height: 4px;
 
     background: var(--rosa);
@@ -693,11 +1001,13 @@ header {
 ========================= */
 
 #formacao {
+
     background: var(--branco);
 }
 
 
 .formacao-lista {
+
     width: min(100%, 900px);
 
     margin: auto;
@@ -705,28 +1015,35 @@ header {
 
 
 .formacao-item {
+
     position: relative;
 
     background: var(--branco);
 
-    border: 1px solid var(--cinza-borda);
+    border:
+        1px solid var(--cinza-borda);
 
-    border-left: 4px solid var(--rosa);
+    border-left:
+        4px solid var(--rosa);
 
-    padding: 25px 30px;
+    padding:
+        25px 30px;
 
     margin-bottom: 22px;
 
-    border-radius: 0 12px 12px 0;
+    border-radius:
+        0 12px 12px 0;
 
     box-shadow:
-        0 5px 20px rgba(0, 0, 0, 0.03);
+        0 5px 20px
+        rgba(0, 0, 0, 0.03);
 
     transition: 0.3s;
 }
 
 
 .formacao-item:hover {
+
     transform: translateX(5px);
 
     border-color: var(--rosa);
@@ -734,25 +1051,30 @@ header {
 
 
 .formacao-item::before {
+
     content: "";
 
     position: absolute;
 
     left: -11px;
+
     top: 30px;
 
     width: 14px;
+
     height: 14px;
 
     background: var(--rosa);
 
     border-radius: 50%;
 
-    border: 3px solid var(--branco);
+    border:
+        3px solid var(--branco);
 }
 
 
 .formacao-item h3 {
+
     font-size: 20px;
 
     margin: 5px 0;
@@ -760,11 +1082,13 @@ header {
 
 
 .formacao-item p {
+
     color: var(--cinza);
 }
 
 
 .ano {
+
     color: var(--rosa);
 
     font-size: 14px;
@@ -777,52 +1101,76 @@ header {
    CURSOS
 ========================= */
 
-.secao:has(.lista-cursos) {
+#cursos {
+
     background: var(--cinza-claro);
 }
 
 
 .lista-cursos {
+
     width: min(100%, 1000px);
 
     margin: auto;
 
     display: grid;
 
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    grid-auto-rows: 75px;
 
     gap: 15px;
 }
 
 
 .lista-cursos article {
+
     position: relative;
+
+    width: 100%;
+
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
 
     background: var(--branco);
 
-    border: 1px solid var(--cinza-borda);
+    border:
+        1px solid var(--cinza-borda);
 
     border-radius: 10px;
 
-    padding: 18px 18px 18px 45px;
+    padding:
+        15px 18px 15px 45px;
 
     color: #444444;
 
     font-size: 15px;
+
+    line-height: 1.4;
 
     transition: 0.3s;
 }
 
 
 .lista-cursos article::before {
+
     content: "✓";
 
     position: absolute;
 
     left: 17px;
+
     top: 50%;
 
-    transform: translateY(-50%);
+    transform:
+        translateY(-50%);
 
     color: var(--rosa);
 
@@ -833,12 +1181,14 @@ header {
 
 
 .lista-cursos article:hover {
+
     border-color: var(--rosa);
 
     transform: translateY(-3px);
 
     box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.05);
+        0 8px 20px
+        rgba(0, 0, 0, 0.05);
 }
 
 
@@ -846,12 +1196,14 @@ header {
    EXPERIÊNCIA
 ========================= */
 
-.secao:has(.experiencia-lista) {
+#experiencia {
+
     background: var(--branco);
 }
 
 
 .experiencia-lista {
+
     width: min(100%, 950px);
 
     margin: auto;
@@ -859,9 +1211,11 @@ header {
 
 
 .experiencia-item {
+
     display: grid;
 
-    grid-template-columns: 70px minmax(0, 1fr);
+    grid-template-columns:
+        70px minmax(0, 1fr);
 
     gap: 25px;
 
@@ -871,28 +1225,33 @@ header {
 
     background: var(--branco);
 
-    border: 1px solid var(--cinza-borda);
+    border:
+        1px solid var(--cinza-borda);
 
     border-radius: 12px;
 
     transition: 0.3s;
 
     box-shadow:
-        0 5px 20px rgba(0, 0, 0, 0.03);
+        0 5px 20px
+        rgba(0, 0, 0, 0.03);
 }
 
 
 .experiencia-item:hover {
+
     border-color: var(--rosa);
 
     transform: translateX(5px);
 
     box-shadow:
-        0 8px 25px rgba(214, 108, 160, 0.08);
+        0 8px 25px
+        rgba(214, 108, 160, 0.08);
 }
 
 
 .experiencia-item .numero {
+
     display: flex;
 
     align-items: center;
@@ -900,6 +1259,7 @@ header {
     justify-content: center;
 
     width: 55px;
+
     height: 55px;
 
     border-radius: 50%;
@@ -915,6 +1275,7 @@ header {
 
 
 .experiencia-item h3 {
+
     font-size: 20px;
 
     margin-bottom: 8px;
@@ -922,6 +1283,7 @@ header {
 
 
 .experiencia-item p {
+
     color: var(--cinza);
 }
 
@@ -931,24 +1293,31 @@ header {
 ========================= */
 
 #contato {
+
     background: var(--rosa-suave);
 }
 
 
 .contato-conteudo {
+
     width: min(100%, 1000px);
 
     margin: auto;
 
     display: grid;
 
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
 
     gap: 50px;
 }
 
 
 .contato-info {
+
     font-style: normal;
 
     display: flex;
@@ -960,15 +1329,18 @@ header {
 
 
 .contato-info p {
+
     color: var(--cinza);
 
     padding-left: 18px;
 
-    border-left: 3px solid var(--rosa);
+    border-left:
+        3px solid var(--rosa);
 }
 
 
 .contato-info strong {
+
     display: block;
 
     color: var(--rosa);
@@ -978,6 +1350,7 @@ header {
 
 
 .contato-info a:hover {
+
     color: var(--rosa);
 }
 
@@ -987,20 +1360,29 @@ header {
 ========================= */
 
 form {
+
     background: var(--branco);
 
-    border: 1px solid var(--cinza-borda);
+    border:
+        1px solid var(--cinza-borda);
 
     border-radius: 14px;
 
-    padding: clamp(20px, 4vw, 30px);
+    padding:
+        clamp(
+            20px,
+            4vw,
+            30px
+        );
 
     box-shadow:
-        0 5px 20px rgba(0, 0, 0, 0.04);
+        0 5px 20px
+        rgba(0, 0, 0, 0.04);
 }
 
 
 label {
+
     display: block;
 
     color: var(--texto);
@@ -1015,13 +1397,15 @@ label {
 
 input,
 textarea {
+
     width: 100%;
 
     padding: 13px;
 
     margin-bottom: 18px;
 
-    border: 1px solid #DDDDDD;
+    border:
+        1px solid #DDDDDD;
 
     border-radius: 7px;
 
@@ -1029,7 +1413,10 @@ textarea {
 
     color: var(--texto);
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
     font-size: 15px;
 
@@ -1039,14 +1426,17 @@ textarea {
 
 input:focus,
 textarea:focus {
+
     border-color: var(--rosa);
 
     box-shadow:
-        0 0 0 3px rgba(214, 108, 160, 0.08);
+        0 0 0 3px
+        rgba(214, 108, 160, 0.08);
 }
 
 
 textarea {
+
     min-height: 130px;
 
     resize: vertical;
@@ -1054,6 +1444,7 @@ textarea {
 
 
 button {
+
     width: 100%;
 
     min-height: 46px;
@@ -1068,7 +1459,10 @@ button {
 
     color: var(--branco);
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
     font-size: 15px;
 
@@ -1081,6 +1475,7 @@ button {
 
 
 button:hover {
+
     background: var(--rosa-escuro);
 
     transform: translateY(-2px);
@@ -1092,9 +1487,11 @@ button:hover {
 ========================= */
 
 footer {
+
     background: var(--branco);
 
-    border-top: 1px solid var(--cinza-borda);
+    border-top:
+        1px solid var(--cinza-borda);
 
     text-align: center;
 
@@ -1103,6 +1500,7 @@ footer {
 
 
 footer p {
+
     color: #888888;
 
     font-size: 14px;
@@ -1114,13 +1512,25 @@ footer p {
 ========================= */
 
 .voltar-topo {
+
     position: fixed;
 
-    right: clamp(15px, 3vw, 25px);
+    right:
+        clamp(
+            15px,
+            3vw,
+            25px
+        );
 
-    bottom: clamp(15px, 3vw, 25px);
+    bottom:
+        clamp(
+            15px,
+            3vw,
+            25px
+        );
 
     width: 50px;
+
     height: 50px;
 
     display: flex;
@@ -1140,33 +1550,37 @@ footer p {
     font-weight: 700;
 
     box-shadow:
-        0 5px 20px rgba(0, 0, 0, 0.15);
+        0 5px 20px
+        rgba(0, 0, 0, 0.15);
 
     transition: 0.3s;
 
-    z-index: 10;
+    z-index: 1000;
 }
 
 
 .voltar-topo:hover {
+
     background: var(--rosa-escuro);
 
     transform: translateY(-4px);
 }
 
 
-/* ==================================================
+/* =========================
    NOTEBOOK / TABLET
-================================================== */
+========================= */
 
 @media (max-width: 1100px) {
 
     .cabecalho {
+
         width: 92%;
     }
 
 
     .hero {
+
         width: 90%;
 
         gap: 45px;
@@ -1174,43 +1588,59 @@ footer p {
 
 
     .foto {
+
         flex-basis: 310px;
     }
 
 
     #habilidades .cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
     }
 
 
     .lista-cursos {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
     }
+
 }
 
 
-/* ==================================================
+/* =========================
    TABLET
-================================================== */
+========================= */
 
 @media (max-width: 900px) {
 
     .cabecalho {
+
         min-height: 75px;
     }
 
 
     .menu {
-        gap: 14px;
+
+        gap: 12px;
     }
 
 
     .menu a {
+
         font-size: 13px;
     }
 
 
     .hero {
+
         min-height: auto;
 
         padding: 70px 0;
@@ -1222,22 +1652,27 @@ footer p {
 
 
     .hero-text {
+
         max-width: 700px;
     }
 
 
     .hero-text > p:last-of-type {
+
         margin-left: auto;
+
         margin-right: auto;
     }
 
 
     .botoes {
+
         justify-content: center;
     }
 
 
     .foto {
+
         flex: none;
 
         order: 2;
@@ -1245,16 +1680,19 @@ footer p {
 
 
     .sobre-conteudo {
+
         grid-template-columns: 1fr;
     }
 
 
     .sobre-texto {
+
         text-align: center;
     }
 
 
     .sobre-info {
+
         max-width: 600px;
 
         margin: auto;
@@ -1262,11 +1700,13 @@ footer p {
 
 
     #projetos .cards {
+
         grid-template-columns: 1fr;
     }
 
 
     .contato-conteudo {
+
         grid-template-columns: 1fr;
 
         max-width: 700px;
@@ -1274,25 +1714,29 @@ footer p {
 
 
     .contato-info {
+
         text-align: center;
     }
 
 
     .contato-info p {
+
         padding-left: 0;
 
         border-left: none;
     }
+
 }
 
 
-/* ==================================================
+/* =========================
    CELULAR
-================================================== */
+========================= */
 
 @media (max-width: 700px) {
 
     .cabecalho {
+
         width: 92%;
 
         padding: 16px 0;
@@ -1304,36 +1748,39 @@ footer p {
 
 
     .logo {
+
         font-size: 23px;
     }
 
 
     .menu {
+
         width: 100%;
 
         display: flex;
 
         flex-wrap: wrap;
 
-        gap: 10px 16px;
+        gap: 10px 14px;
 
         justify-content: center;
     }
 
 
     .menu a {
-        font-size: 13px;
+
+        font-size: 12px;
     }
 
 
     .link-contato span {
-        top: -20px;
 
         font-size: 18px;
     }
 
 
     .hero {
+
         width: 90%;
 
         padding: 55px 0;
@@ -1341,22 +1788,35 @@ footer p {
 
 
     .hero h1 {
-        font-size: clamp(34px, 10vw, 42px);
+
+        font-size:
+            clamp(
+                34px,
+                10vw,
+                42px
+            );
     }
 
 
     .hero h2 {
+
         font-size: 19px;
     }
 
 
     .hero-text > p:last-of-type {
+
         font-size: 15px;
     }
 
 
     .foto img {
-        width: min(70vw, 270px);
+
+        width:
+            min(
+                70vw,
+                270px
+            );
 
         height: auto;
 
@@ -1365,6 +1825,7 @@ footer p {
 
 
     .botoes {
+
         width: 100%;
 
         flex-direction: column;
@@ -1375,46 +1836,59 @@ footer p {
 
     .botao,
     .botao-outline {
+
         width: 100%;
     }
 
 
     .secao {
-        padding: 60px 6%;
+
+        padding:
+            60px 6%;
     }
 
 
     .titulo-secao {
+
         margin-bottom: 35px;
+
+        padding-bottom: 18px;
     }
 
 
     .titulo-secao p {
+
         font-size: 12px;
     }
 
 
     .titulo-secao h2 {
+
         font-size: 29px;
     }
 
 
     .sobre-info {
+
         grid-template-columns: 1fr;
     }
 
 
     #habilidades .cards {
+
         grid-template-columns: 1fr;
     }
 
 
     #habilidades .card {
-        padding: 25px 25px 25px 30px;
+
+        padding:
+            25px 25px 25px 30px;
     }
 
 
     #projetos .projeto {
+
         min-height: auto;
 
         padding: 25px;
@@ -1422,32 +1896,45 @@ footer p {
 
 
     #projetos .projeto h3 {
+
         font-size: 19px;
     }
 
 
     #projetos .projeto p {
+
         font-size: 15px;
     }
 
 
     .formacao-item {
-        padding: 22px 20px 22px 25px;
+
+        padding:
+            22px 20px 22px 25px;
     }
 
 
     .formacao-item::before {
+
         display: none;
     }
 
 
+    /* CURSOS */
+
     .lista-cursos {
+
         grid-template-columns: 1fr;
+
+        grid-auto-rows: 60px;
     }
 
 
     .lista-cursos article {
-        min-height: 52px;
+
+        height: 60px;
+
+        min-height: 60px;
 
         display: flex;
 
@@ -1456,6 +1943,7 @@ footer p {
 
 
     .experiencia-item {
+
         grid-template-columns: 1fr;
 
         gap: 15px;
@@ -1465,6 +1953,7 @@ footer p {
 
 
     .experiencia-item .numero {
+
         width: 50px;
 
         height: 50px;
@@ -1472,88 +1961,109 @@ footer p {
 
 
     .contato-conteudo {
+
         gap: 30px;
     }
 
 
     form {
+
         padding: 22px;
     }
 
 
     footer {
-        padding: 22px 6%;
+
+        padding:
+            22px 6%;
     }
 
 
     .voltar-topo {
+
         width: 45px;
 
         height: 45px;
 
         font-size: 21px;
     }
+
 }
 
 
-/* ==================================================
+/* =========================
    CELULAR PEQUENO
-================================================== */
+========================= */
 
 @media (max-width: 400px) {
 
     .menu {
-        gap: 8px 12px;
+
+        gap:
+            8px 10px;
     }
 
 
     .menu a {
-        font-size: 12px;
+
+        font-size: 11px;
     }
 
 
     .hero h1 {
+
         font-size: 32px;
     }
 
 
     .hero h2 {
+
         font-size: 18px;
     }
 
 
     .foto img {
+
         width: 220px;
     }
 
 
     .secao {
-        padding: 50px 5%;
+
+        padding:
+            50px 5%;
     }
 
 
     .titulo-secao h2 {
+
         font-size: 26px;
     }
 
 
     .info {
-        padding: 20px 12px;
+
+        padding:
+            20px 12px;
     }
 
 
     #projetos .projeto {
-        padding: 25px 20px;
+
+        padding:
+            25px 20px;
     }
 
 
     .experiencia-item {
+
         padding: 20px;
     }
 
 
     form {
+
         padding: 18px;
     }
-}
 
+}
